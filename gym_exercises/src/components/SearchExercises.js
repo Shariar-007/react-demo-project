@@ -5,7 +5,6 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
   const [search, setSearch] = useState('');
-  // const [exercises, setExercises] = useState([]);
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -28,7 +27,7 @@ const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
                || item.bodyPart.toLowerCase().includes(search),
       );
 
-      // window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
 
       setSearch('');
       setExercises(searchedExercises);
@@ -79,7 +78,7 @@ const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
       </Box>
 
       <Box sx={{position: 'relative', width: '100%', p: "20px"}}>
-          <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+          <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyParts/>
       </Box>
     </Stack>
   );
