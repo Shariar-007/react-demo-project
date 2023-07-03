@@ -3,6 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
+import Loader from './Loader';
 
 const Exercises = ({ bodyPart, exercises, setExercises }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,7 +35,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-  if (!currentExercises.length) return "Loading....";
+  if (!currentExercises.length) return <Loader/>;
 
   return (
     <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
